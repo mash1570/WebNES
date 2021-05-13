@@ -1,11 +1,11 @@
 body {
-  background-color: #546E7A;
-  color: white;
-  font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #FFFFFF;
+  color: #000;
+  font-family: 'Roboto';
 }
 
 a, a:visited {
-  color: white;
+  color: black;
 }
 
 h1 {
@@ -26,8 +26,17 @@ h1 {
 
 #installContainer button {
   background-color: inherit;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid black;
+  color: black;
   font-size: 1em;
   padding: 0.75em;
+}
+
+#header {
+  background-color: red;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
