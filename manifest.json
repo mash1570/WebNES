@@ -1,7 +1,7 @@
 {
-  "short_name": "Chromebook Test App",
-  "name": "Chromebook Test App",
-  "description": "Chromebook Test App",
+  "short_name": "webNES",
+  "name": "webNES",
+  "description": "webNES",
   "icons": [
     {
       "src": "images/icons/48x48.png",
