@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-	<title>WebNES</title>
+	<title>webNES</title>
     <meta charset="utf-8"/>
 	
 	<link rel="stylesheet" href="css/thirdparty.min.css">
@@ -20,16 +20,6 @@
     <meta name="theme-color" content="#FFFFFF">
   </head>  
   <body onunload="" id="body">
-   
-   <div id="fb-root"></div>
-	<!-- facebook api -->
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0&appId=310800822454793";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
 	
 	<div id="content" class="normal" style="width:100%; height:100%; display:inline-block">
 		<div id="infoPanel" class="infoPanel">
@@ -37,13 +27,14 @@
 			<p>Drag a ROM file (can be zipped) onto the screen to load a game.</p>
 			<p>Keys:</p>
 			<ul>
-			<li>Z - A button</li>
-			<li>X - B button</li>
+			<li>X - A button</li>
+			<li>Z - B button</li>
 			<li>C - Select button</li>
 			<li>V - Start button</li>
 			<li>Arrow keys - DPAD</li>
 			</ul>
 			<p>Pete Ward, 2014 [peteward44 at gmail dot com]</p>
+			<p>Remade as a ChromeOS app by mash1570, 2021</p>
 			<div id="postProcessingDiv" style="display:none;">
 			<p>Post processing effects:</p>
 			<p>
@@ -89,39 +80,13 @@
 			</p>
 			</div>
 		</div>
-		<div id="socialMediaPanel" class="socialMediaPanel">
-			<div id="twitter">
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://peteward44.github.io/WebNES/" data-text="WebNES - A superior NES emulator for the Web">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-			</div>
-			<div>&nbsp;</div>
-			<div id="facebook">
-				<div class="fb-like" data-href="http://peteward44.github.io/WebNES" data-layout="button" data-action="recommend" data-show-faces="true" data-share="true"></div>
-			</div>
-			<div>&nbsp;</div>
-			<div id="google">
-				<!-- Place this tag where you want the +1 button to render. -->
-				<div class="g-plusone" data-size="medium" data-href="https://github.com/peteward44/WebNES"></div>
-
-				<!-- Place this tag after the last +1 button tag. -->
-				<script type="text/javascript">
-				  window.___gcfg = {lang: 'en-GB'};
-
-				  (function() {
-					var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-					po.src = 'https://apis.google.com/js/platform.js';
-					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-				  })();
-				</script>
-			</div>
-		</div>
 		<div id="canvasWrapper" class="wrapper">
 		</div>
 		<div id="controlBar" class="controlBar">
 			<div id="debugBar" class="ui-widget-header ui-corner-all">
-				<button class="controlBarButton" id="debugControlBar_playOneFrameButton"></button>
+				<button class="controlBarButton" id="debugControlBar_playOneFrameButton">Play One Frame</button>
 				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="debugControlBar_gameSpeedButton"></button>
+				<button class="controlBarButton" id="debugControlBar_gameSpeedButton">Game Speed</button>
 				<!--<button class="controlBarButton" id="debugControlBar_getFrameHashButton"></button>-->
 				<div class="controlBarSeperator"></div>
 				<span id="debugControlBar_encoding">
@@ -129,7 +94,7 @@
 					<input type="radio" id="debugControlBar_encodingPAL" name="debugControlBar_encoding" value="PAL"><label for="debugControlBar_encodingPAL">PAL</label>
 				</span>
 				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="debugControlBar_selectTraceButton"></button>
+				<button class="controlBarButton" id="debugControlBar_selectTraceButton">Select Trace</button>
 				<ul id="debugControlBar_traceMenu">
 					<li class="controlBarMenuButton" id="controlBar_cpuTraceParent"><input type="checkbox" id="controlBar_cpuTraceButton"><label for="controlBar_cpuTraceButton">CPU</label></li>
 					<li class="controlBarMenuButton" id="controlBar_cpuInstructionsTraceParent"><input type="checkbox" id="controlBar_cpuInstructionsTraceButton"><label for="controlBar_cpuInstructionsTraceButton">CPU Instructions</label></li>
@@ -137,27 +102,25 @@
 					<li class="controlBarMenuButton" id="controlBar_mapperTraceParent"><input type="checkbox" id="controlBar_mapperTraceButton"><label for="controlBar_mapperTraceButton">Mapper</label></li>
 					<li class="controlBarMenuButton" id="controlBar_allTraceParent"><input type="checkbox" id="controlBar_allTraceButton"><label for="controlBar_allTraceButton">All</label></li>
 				</ul>
-				<button class="controlBarButton" id="debugControlBar_traceButton"></button>
+				<button class="controlBarButton" id="debugControlBar_traceButton">Trace</button>
 			</div>
 			<div id="normalBar" class="ui-widget-header ui-corner-all">
-				<button class="controlBarButton" id="controlBar_loadRomButton"></button>
+				<button class="controlBarButton" id="controlBar_loadRomButton">Load ROM</button>
 				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_resetButton"></button>
+				<button class="controlBarButton" id="controlBar_resetButton">Reset</button>
 				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_playButton"></button>
+				<button class="controlBarButton" id="controlBar_playButton">Play</button>
 				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_soundButton"></button>
-				<button class="controlBarButton" id="controlBar_screenshotButton"></button>
+				<button class="controlBarButton" id="controlBar_soundButton">Sound</button>
+				<button class="controlBarButton" id="controlBar_screenshotButton">Screenshot</button>
 				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_quickSaveButton"></button>
-				<button class="controlBarButton" id="controlBar_quickLoadButton"></button>
+				<button class="controlBarButton" id="controlBar_quickSaveButton">Quick Save</button>
+				<button class="controlBarButton" id="controlBar_quickLoadButton">Quick Load</button>
 				<div class="controlBarSeperator"></div>
-				<input class="controlBarButton" type="checkbox" id="controlBar_debugButton"><label for="controlBar_debugButton"></label>
+				<input class="controlBarButton" type="checkbox" id="controlBar_debugButton"><label for="controlBar_debugButton">Debug</label>
 				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_keyboardRemap"></button>
+				<button class="controlBarButton" id="controlBar_keyboardRemap">Keys</button>
 				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_gameGenieButton"></button>
-				<button class="controlBarButton" id="controlBar_errorDisplay"></button>
 			</div>
 		</div>
 		<div id="controlBar_volumeSlider"></div>
