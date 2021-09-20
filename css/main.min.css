@@ -10,7 +10,7 @@ body,html{
   display:inline-block
 }
 .wrapper canvas{
-  box-shadow:2px 2px 5px 0 rgba(135,235,235,1)
+  box-shadow:2px 2px 5px 0 rgba(36,36,36,1)
 }
 .ui-menu{
   position:absolute;
@@ -82,7 +82,7 @@ body,html{
   .wrapper canvas{
     width:100%
   }
-  body{
+  body, html{
     background-color:#FFF
   }
 }
