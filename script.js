@@ -1,6 +1,6 @@
-if ('serviceWorker' in navigator) {
+/* if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
-}
+} */
 
 /**
  * Warn the page must be served over HTTPS
