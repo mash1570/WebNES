@@ -82,4 +82,7 @@ body,html{
   .wrapper canvas{
     width:100%
   }
+  body{
+    background-color:#FFF
+  }
 }
