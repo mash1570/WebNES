@@ -1,6 +1,6 @@
 {
   "short_name": "WebNES",
-  "name": "WebNES-PWA",
+  "name": "WebNES",
   "description": "An NES emulator that runs as a Progressive Web App.",
   "icons": [
     {
